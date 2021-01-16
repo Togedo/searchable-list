@@ -2,26 +2,26 @@
 
 var React = require("react");
 var ReactDom = require("react-dom");
-var UserSearchDropdown$SearchableList = require("./UserSearchDropdown.bs.js");
+var Searchable$SearchableList = require("./Searchable.bs.js");
+var SearchDropdown$SearchableList = require("./SearchDropdown.bs.js");
 
-var users = [
-  {
-    TAG: /* User */1,
-    _0: {
-      name: "Bob"
-    }
-  },
-  {
-    TAG: /* User */1,
-    _0: {
-      name: "Tom"
-    }
-  }
-];
+var users = Searchable$SearchableList.fromUsers([
+      {
+        name: "Anne"
+      },
+      {
+        name: "Bob"
+      },
+      {
+        name: "Tom"
+      }
+    ]);
 
-ReactDom.render(React.createElement(UserSearchDropdown$SearchableList.make, {
-          users: users
-        }), document.body);
+ReactDom.render(React.createElement("div", undefined, React.createElement("h1", undefined, "Remote search"), React.createElement(SearchDropdown$SearchableList.RemoteSearchDropdown.make, {
+              users: users
+            }), React.createElement("h1", undefined, "Local search"), React.createElement(SearchDropdown$SearchableList.LocalSearchDropdown.make, {
+              users: users
+            })), document.body);
 
 exports.users = users;
-/*  Not a pure module */
+/* users Not a pure module */
