@@ -1,1 +1,1 @@
-# A Rescript/ReasonML searchable list
+# Rescript/ReasonML + React searchable list components
